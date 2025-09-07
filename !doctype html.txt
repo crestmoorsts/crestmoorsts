@@ -1,0 +1,10 @@
+<!doctype html>
+<html>
+  <head><title>Crestmoor STS</title></head>
+  <body style="font-family:sans-serif;background:#0b0b0c;color:#eaeaea;display:flex;align-items:center;justify-content:center;height:100vh">
+    <div>
+      <h1>Crestmoor STS</h1>
+      <p>Site is live.</p>
+    </div>
+  </body>
+</html>
