@@ -9,16 +9,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
 <style>
-/* Layout: sticky top bar, split hero (statement left, decision path right), then ruled sections with a left label column. Bone ground, ink type and a single oxblood accent; dark mode follows the system setting. */
+/* Layout: sticky top bar, split hero (statement left, decision path right), then ruled sections with a left label column. Cool gray ground, ink type and a single steel-blue accent over a faint blueprint grid; dark mode follows the system setting. */
 :root {
-  --bg: #F1EEE7;
-  --bg2: #E9E5DA;
-  --card: #FAF8F3;
-  --fg: #17191C;
-  --muted: #55585C;
-  --line: #D4CFC2;
-  --accent: #7A1F2B;
+  --bg: #EDF0F3;
+  --bg2: #E0E5EA;
+  --card: #F8F9FB;
+  --fg: #0A1220;
+  --muted: #445064;
+  --line: #C3CBD6;
+  --accent: #2C5D8F;
   --accent-fg: #FFFFFF;
+  --grid: rgba(10, 18, 32, 0.05);
   --font-display: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "Inter", "Helvetica Neue", Arial, sans-serif;
@@ -26,24 +27,24 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #141415; --bg2: #1B1B1D; --card: #19191B; --fg: #ECE8DF; --muted: #A8A39A;
-    --line: #34343A; --accent: #E0909B; --accent-fg: #141415; color-scheme: dark;
+    --bg: #0B111A; --bg2: #121A26; --card: #0F1621; --fg: #E6EBF2; --muted: #98A3B5;
+    --line: #243042; --accent: #7FA8D6; --accent-fg: #0B111A; --grid: rgba(127, 168, 214, 0.07); color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #141415; --bg2: #1B1B1D; --card: #19191B; --fg: #ECE8DF; --muted: #A8A39A;
-  --line: #34343A; --accent: #E0909B; --accent-fg: #141415; color-scheme: dark;
+  --bg: #0B111A; --bg2: #121A26; --card: #0F1621; --fg: #E6EBF2; --muted: #98A3B5;
+  --line: #243042; --accent: #7FA8D6; --accent-fg: #0B111A; --grid: rgba(127, 168, 214, 0.07); color-scheme: dark;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 16px; line-height: 1.6; padding-inline: 16px; }
+body { background-color: var(--bg); background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px); background-size: 32px 32px; color: var(--fg); font-family: var(--font-body); font-size: 16px; line-height: 1.6; padding-inline: 16px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .wrap { max-width: 1080px; margin-inline: auto; }
 
 /* top bar */
-.bar { border-bottom-color: var(--fg); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); margin-inline: -16px; padding-inline: 16px; }
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--accent); margin-inline: -16px; padding-inline: 16px; }
 .bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; padding-block: 12px; }
 .brand { font-family: var(--font-display); font-weight: 600; font-size: 16px; letter-spacing: 0.22em; text-decoration: none; }
 .brand span { color: var(--accent); }
