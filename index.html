@@ -7,32 +7,32 @@
 <title>Crestmoor STS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
 <style>
-/* Layout: sticky top bar, split hero (statement left, decision path right), then ruled sections with a left label column. Dark-first, graphite ground with one signal-blue accent. */
+/* Layout: sticky top bar, split hero (statement left, decision path right), then ruled sections with a left label column. Bone ground, ink type and a single oxblood accent; dark mode follows the system setting. */
 :root {
-  --bg: #121417;
-  --bg2: #181B1F;
-  --card: #181B1F;
-  --fg: #E9EDF1;
-  --muted: #9BA3AD;
-  --line: #2B3036;
-  --accent: #4DA3FF;
-  --accent-fg: #0A0F14;
-  --font-display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
-  --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
-  color-scheme: dark;
+  --bg: #F1EEE7;
+  --bg2: #E9E5DA;
+  --card: #FAF8F3;
+  --fg: #17191C;
+  --muted: #55585C;
+  --line: #D4CFC2;
+  --accent: #7A1F2B;
+  --accent-fg: #FFFFFF;
+  --font-display: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Inter", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
 }
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
-    --bg: #F4F6F8; --bg2: #E8ECEF; --card: #FFFFFF; --fg: #14181D; --muted: #4B5560;
-    --line: #CBD2D9; --accent: #0B5FCC; --accent-fg: #FFFFFF; color-scheme: light;
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141415; --bg2: #1B1B1D; --card: #19191B; --fg: #ECE8DF; --muted: #A8A39A;
+    --line: #34343A; --accent: #E0909B; --accent-fg: #141415; color-scheme: dark;
   }
 }
-:root[data-theme="light"] {
-  --bg: #F4F6F8; --bg2: #E8ECEF; --card: #FFFFFF; --fg: #14181D; --muted: #4B5560;
-  --line: #CBD2D9; --accent: #0B5FCC; --accent-fg: #FFFFFF; color-scheme: light;
+:root[data-theme="dark"] {
+  --bg: #141415; --bg2: #1B1B1D; --card: #19191B; --fg: #ECE8DF; --muted: #A8A39A;
+  --line: #34343A; --accent: #E0909B; --accent-fg: #141415; color-scheme: dark;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -43,42 +43,42 @@ a { color: inherit; }
 .wrap { max-width: 1080px; margin-inline: auto; }
 
 /* top bar */
-.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); margin-inline: -16px; padding-inline: 16px; }
+.bar { border-bottom-color: var(--fg); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); margin-inline: -16px; padding-inline: 16px; }
 .bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; padding-block: 12px; }
-.brand { font-family: var(--font-display); font-weight: 700; font-size: 22px; letter-spacing: 0.12em; text-decoration: none; }
+.brand { font-family: var(--font-display); font-weight: 600; font-size: 16px; letter-spacing: 0.22em; text-decoration: none; }
 .brand span { color: var(--accent); }
-nav { display: flex; gap: 6px 22px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+nav { display: flex; gap: 6px 24px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; }
 nav a { text-decoration: none; color: var(--muted); padding-block: 4px; }
 nav a:hover { color: var(--fg); }
 
 /* hero */
 .hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 40px; padding-block: 56px 48px; align-items: start; }
-.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 0 0 16px; }
-h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(42px, 7vw, 72px); line-height: 0.98; letter-spacing: 0.01em; text-transform: uppercase; margin: 0 0 20px; text-wrap: balance; }
-.lede { font-size: 18px; color: var(--muted); max-width: 52ch; margin: 0 0 28px; }
+.eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin: 0 0 16px; }
+h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(42px, 7.2vw, 80px); line-height: 1.02; letter-spacing: -0.035em; text-transform: none; margin: 0 0 20px; text-wrap: balance; }
+.lede { font-size: 19px; color: var(--muted); max-width: 52ch; margin: 0 0 28px; }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.btn { display: inline-block; font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; padding: 12px 18px; border: 1px solid var(--line); color: var(--fg); background: transparent; cursor: pointer; }
+.btn { display: inline-block; font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 14px 22px; border: 1px solid var(--fg); color: var(--fg); background: transparent; cursor: pointer; }
 .btn:hover { border-color: var(--accent); }
-.btn.primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); font-weight: 500; }
+.btn.primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); font-weight: 600; }
 
 .path { margin: 0; padding: 0; list-style: none; border-left: 1px solid var(--line); }
 .path li { position: relative; padding: 0 0 22px 24px; }
 .path li:last-child { padding-bottom: 0; }
 .path li::before { content: ""; position: absolute; left: -5px; top: 7px; width: 9px; height: 9px; background: var(--bg); border: 1px solid var(--accent); }
 .path li:last-child::before { background: var(--accent); }
-.path b { display: block; font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.1; }
+.path b { display: block; font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.02em; text-transform: none; line-height: 1.1; }
 .path span { display: block; color: var(--muted); font-size: 14px; }
-.path-cap { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
+.path-cap { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
 
 /* sections */
-section { border-top: 1px solid var(--line); padding-block: 44px; display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 20px 40px; }
-h2 { font-family: var(--font-display); font-weight: 600; font-size: 28px; letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.1; margin: 0; }
+section { border-top: 1px solid var(--fg); padding-block: 64px; display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 20px 40px; }
+h2 { font-family: var(--font-display); font-weight: 600; font-size: 30px; letter-spacing: -0.025em; text-transform: none; line-height: 1.1; margin: 0; }
 .sub { color: var(--muted); font-size: 14px; margin: 8px 0 0; }
 .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .card { background: var(--card); border: 1px solid var(--line); padding: 20px; min-width: 0; }
-.card h3 { font-family: var(--font-display); font-weight: 600; font-size: 22px; letter-spacing: 0.04em; text-transform: uppercase; margin: 0 0 8px; line-height: 1.15; }
+.card h3 { font-family: var(--font-display); font-weight: 600; font-size: 22px; letter-spacing: -0.02em; text-transform: none; margin: 0 0 8px; line-height: 1.15; }
 .card p { margin: 0; color: var(--muted); font-size: 15px; }
-.tag { display: inline-block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--line); padding: 2px 8px; margin-bottom: 12px; }
+.tag { display: inline-block; font-family: var(--font-mono); font-size: 10.5px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--line); padding: 2px 8px; margin-bottom: 12px; }
 .list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
 .list li { padding: 14px 0; border-bottom: 1px solid var(--line); }
 .list li:first-child { padding-top: 0; }
@@ -87,12 +87,12 @@ h2 { font-family: var(--font-display); font-weight: 600; font-size: 28px; letter
 .list span { display: block; color: var(--muted); font-size: 15px; }
 .data { margin: 0; display: grid; grid-template-columns: minmax(0, 190px) minmax(0, 1fr); gap: 0; font-size: 15px; }
 .data dt, .data dd { margin: 0; padding: 11px 0; border-bottom: 1px solid var(--line); min-width: 0; overflow-wrap: anywhere; }
-.data dt { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding-right: 16px; padding-top: 14px; }
-.data dd { font-family: var(--font-mono); font-size: 14px; }
+.data dt { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding-right: 16px; padding-top: 14px; }
+.data dd { font-family: var(--font-body); font-size: 15px; font-variant-numeric: tabular-nums; }
 .data dd.plain { font-family: var(--font-body); font-size: 15px; }
 .contact { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 4px; }
-.mail { font-family: var(--font-mono); font-size: 18px; overflow-wrap: anywhere; }
-.copied { font-family: var(--font-mono); font-size: 12px; color: var(--accent); min-height: 1.2em; margin: 8px 0 0; }
+.mail { font-family: var(--font-display); font-weight: 500; font-size: 22px; letter-spacing: -0.01em; overflow-wrap: anywhere; }
+.copied { font-family: var(--font-body); font-size: 12.5px; color: var(--accent); min-height: 1.2em; margin: 8px 0 0; }
 footer { border-top: 1px solid var(--line); padding-block: 28px 36px; color: var(--muted); font-size: 13px; display: flex; flex-wrap: wrap; gap: 8px 32px; justify-content: space-between; }
 
 @media (max-width: 820px) {
@@ -110,12 +110,12 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 36px; color: var
 .stack { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
 .stack li { display: grid; grid-template-columns: minmax(0, 150px) minmax(0, 1fr); gap: 4px 16px; padding: 14px 16px; background: var(--card); border: 1px solid var(--line); align-items: baseline; }
 .stack li:nth-child(2n) { background: var(--bg2); }
-.stack b { font-family: var(--font-display); font-size: 22px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+.stack b { font-family: var(--font-display); font-size: 22px; letter-spacing: 0.02em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
 .stack span { color: var(--muted); font-size: 15px; }
-.stack-cap { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+.stack-cap { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
 .status { width: 100%; border-collapse: collapse; font-size: 15px; }
 .status th, .status td { text-align: left; padding: 11px 12px 11px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
-.status th { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 400; }
+.status th { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
 .status td:last-child { color: var(--muted); }
 .scroll { overflow-x: auto; }
 @media (max-width: 520px) { .stack li { grid-template-columns: minmax(0, 1fr); } }
@@ -123,8 +123,8 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 36px; color: var
 .team { display: grid; gap: 16px; }
 .person { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 20px; background: var(--card); border: 1px solid var(--line); padding: 20px; min-width: 0; }
 .person img { width: 120px; height: 160px; object-fit: cover; display: block; border: 1px solid var(--line); background: var(--bg2); }
-.person h3 { font-family: var(--font-display); font-weight: 600; font-size: 24px; letter-spacing: 0.04em; text-transform: uppercase; margin: 0 0 4px; line-height: 1.1; }
-.person .role { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin: 0 0 10px; }
+.person h3 { font-family: var(--font-display); font-weight: 600; font-size: 24px; letter-spacing: -0.02em; text-transform: none; margin: 0 0 4px; line-height: 1.1; }
+.person .role { font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin: 0 0 10px; }
 .person p { margin: 0; color: var(--muted); font-size: 15px; }
 .person p + p { margin-top: 10px; }
 @media (max-width: 520px) { .person { grid-template-columns: 88px minmax(0, 1fr); gap: 14px; padding: 16px; } .person img { width: 88px; height: 117px; } }
@@ -132,7 +132,7 @@ footer { border-top: 1px solid var(--line); padding-block: 28px 36px; color: var
 /* visuals */
 .crestmoor-visual { margin: 0; min-width: 0; }
 .crestmoor-visual img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid var(--line); background: var(--bg2); }
-.crestmoor-visual figcaption { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.04em; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+.crestmoor-visual figcaption { font-family: var(--font-body); font-size: 12.5px; letter-spacing: 0; color: var(--muted); margin-top: 8px; line-height: 1.5; }
 .hero-visual { padding-bottom: 48px; }
 .section-visual { grid-column: 1 / -1; }
 .card .crestmoor-visual { margin: -20px -20px 16px; }
